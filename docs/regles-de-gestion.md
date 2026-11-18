@@ -55,6 +55,10 @@ plus au compteur d’actions, mais reste affichée :
 - `1 unresolved discussion · Awaiting reply` : toutes les conversations ouvertes connues sont en attente.
 - `3 unresolved discussions · Awaiting reply in 2` : deux conversations attendent une réponse ; la troisième reste une action.
 
+Le résumé des discussions est **orange** lorsqu’au moins une reste à traiter.
+Il reste en couleur neutre quand toutes attendent une réponse. Le signal
+« quelqu’un a répondu après toi », y compris son nombre, est également orange.
+
 Une réponse ultérieure de quelqu’un d’autre rend la conversation à nouveau
 actionnable. Une réponse encore en brouillon ne suffit pas. Si l’historique des
 commentaires est incomplet ou si les dates ne permettent pas de trancher,

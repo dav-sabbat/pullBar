@@ -530,7 +530,10 @@ extension AppDelegate {
             for index in start..<end {
                 if index > start { issueItemTitle.appendString(string: " · ") }
                 let isReady = pull.node.viewerDidAuthor && states[index] == "Ready to merge"
-                issueItemTitle.appendString(string: states[index], color: isReady ? .systemGreen : .labelColor)
+                let needsDiscussionAction = pull.node.actionableDiscussions > 0
+                    && states[index] == pull.node.discussionSummary
+                let color: NSColor = isReady ? .systemGreen : (needsDiscussionAction ? .systemOrange : .labelColor)
+                issueItemTitle.appendString(string: states[index], color: color)
             }
         }
 
@@ -539,7 +542,7 @@ extension AppDelegate {
             let countPrefix = pull.node.replyHistoryComplete ? "" : "Au moins "
             let conversation = replies == 1 ? "conversation" : "conversations"
             issueItemTitle.appendNewLine()
-                .appendString(string: "\(countPrefix)\(replies) \(conversation) — ", color: .labelColor)
+                .appendString(string: "\(countPrefix)\(replies) \(conversation) — ", color: .systemOrange)
                 .appendString(string: "quelqu’un a répondu après toi", color: .systemOrange)
         }
         if !pull.node.replyHistoryComplete {
