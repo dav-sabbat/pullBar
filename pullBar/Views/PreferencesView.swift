@@ -24,6 +24,7 @@ struct PreferencesView: View {
 
     @Default(.showAvatar) var showAvatar
     @Default(.showLabels) var showLabels
+    @Default(.showUnreadIndicator) var showUnreadIndicator
     @Default(.showDraftPRs) var showDraftPRs
     @Default(.showCIDiagnostics) var showCIDiagnostics
 
@@ -77,6 +78,8 @@ struct PreferencesView: View {
                 Toggle("Show Avatar", isOn: $showAvatar)
 
                 Toggle("Show Labels", isOn: $showLabels)
+                Toggle("Show unread indicator", isOn: $showUnreadIndicator)
+                    .help("Show a blue dot for PRs GitHub considers unread. This only changes the display, not review-comment actions. Applied when Preferences closes.")
 
                 HStack(alignment: .center) {
                     Text("Refresh Rate:").frame(width: 120, alignment: .trailing)

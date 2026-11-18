@@ -463,7 +463,9 @@ extension AppDelegate {
         let issueItem = NSMenuItem(title: "", action: #selector(self.openLink), keyEquivalent: "")
         
         let issueItemTitle = NSMutableAttributedString(string: "")
-            .appendString(string: pull.node.isReadByViewer ? "" : "⏺ ", color: .systemBlue)
+        if Defaults[.showUnreadIndicator] && !pull.node.isReadByViewer {
+            issueItemTitle.appendString(string: "⏺ ", color: .systemBlue)
+        }
 
         if pull.node.isDraft {
             issueItemTitle.appendString(string: "🚧 ")

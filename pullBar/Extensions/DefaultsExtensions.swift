@@ -33,6 +33,7 @@ extension Defaults.Keys {
 
     static let showAvatar = Key<Bool>("showAvatar", default: false)
     static let showLabels = Key<Bool>("showLabels", default: true)
+    static let showUnreadIndicator = Key<Bool>("showUnreadIndicator", default: false)
     static let showDraftPRs = Key<Bool>("showDraftPRs", default: true)
 
     static let refreshRate = Key<Int>("refreshRate", default: 5)

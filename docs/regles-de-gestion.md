@@ -94,7 +94,8 @@ checks en cours, c’est la durée la plus longue connue. Une CI absente, incomp
 ou composée uniquement de checks ignorés/neutres ne signifie pas « tests OK ».
 PullBar affiche les checks GitHub sans pouvoir vérifier qu’ils exécutent réellement des tests.
 
-Le **point bleu** signifie que GitHub considère la PR comme non lue. C’est un
+Le **point bleu**, masqué par défaut et activable via **Show unread indicator**,
+signifie que GitHub considère la PR comme non lue. C’est un
 état global de la PR, pas un nombre de commentaires non lus. Pour le signal
 « New review comments », PullBar combine cet état avec les reviews publiées et
 la date locale de dernière ouverture depuis PullBar. Ouvrir une PR depuis
@@ -110,6 +111,7 @@ ni les conversations ni les demandes de changements.
 | **Excluded repositories** | Un `organisation/repo` par ligne, sans distinction de casse. Retire leurs PR de toutes les sections et des compteurs, même si le dépôt est configuré dans les merges récents. |
 | **Recent merges** | Active/désactive « Just so you know », choisit les dépôts et le nombre total de résultats : 3 ou 5. |
 | **Show Avatar / Show Labels** | Affiche ou masque les avatars et labels. |
+| **Show unread indicator** | Désactivé par défaut. Affiche le point bleu des PR non lues selon GitHub, sans modifier la détection des nouveaux commentaires ni les compteurs d’actions. |
 | **Show debug information** | Affiche les données techniques de CI pour le diagnostic ; désactivé par défaut. |
 | **Refresh Rate / Launch at login** | Règle la fréquence de rafraîchissement et le lancement à l’ouverture de session. |
 
